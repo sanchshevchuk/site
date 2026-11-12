@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>your.site — Сайти за 7 днів. Жодних довгобудів</title>
+  <meta name="description" content="Швидка розробка сайтів за 1 тиждень. Лендінги, візитки, вітрини без затягнутих термінів. Перший кейс: jmc-trade.com.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%2232%22%20height=%2232%22><text y=%2224%22 font-size=%2224%22>⚡</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400;1,700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@500;700;800&family=Syne:wght@700;800;900&family=VT323&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="neobrutalism">
+
+  <!-- Scanline / Pattern Overlay for Tech Themes -->
+  <div class="theme-overlay-fx" aria-hidden="true"></div>
+
+  <!-- Interactive Top Style Controller -->
+  <aside class="theme-controller" id="themeController" aria-label="Панель перемикання стилю">
+    <div class="controller-content">
+      <div class="controller-badge">
+        <span class="pulse-dot"></span>
+        <span class="style-counter" id="styleCounter">Стиль 1 з 8</span>
+      </div>
+      <div class="controller-title">
+        <span class="label">Поточний вайб:</span>
+        <strong id="currentThemeName">Neo-Brutalism (Gumroad / Trend)</strong>
+      </div>
+      <div class="controller-actions">
+        <button id="randomThemeBtn" class="ctrl-btn primary-ctrl" title="Отримати наступний дизайн">
+          <span>🎲 Наступний дизайн</span>
+        </button>
+        <select id="themeSelect" class="ctrl-select" aria-label="Оберіть стиль вручну">
+          <option value="neobrutalism">1. Neo-Brutalism (Стикерний / Поп-контрастний)</option>
+          <option value="cyberpunk">2. Cyberpunk HUD (Неоновий Sci-Fi / Кібер-кути)</option>
+          <option value="glassmorphism">3. Glassmorphism (Apple Cupertino Aurora Glass)</option>
+          <option value="bento_dark">4. Dark Bento SaaS (Стиль Linear & Vercel)</option>
+          <option value="editorial">5. Editorial Luxury (Шик Awwwards / Золоті акценти)</option>
+          <option value="terminal">6. Retro Matrix Terminal (Зелений фосфорний монітор)</option>
+          <option value="minimalism">7. Swiss Bauhaus (Швейцарський гротеск / Червоний маркер)</option>
+          <option value="y2k_retro">8. Y2K Windows 2000 (Ретро-пастелі / Бабл 90-х)</option>
+        </select>
+      </div>
+    </div>
+    <div class="controller-tip">
+      ⚡ При кожному F5 стиль змінюється повністю (фон, геометрія, кнопки, тіні та шрифти)!
+    </div>
+  </aside>
+
+  <!-- Dynamic Marquee Running Ticker -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>⚡ САЙТИ ЗА 7 ДНІВ ✦ ЖОДНИХ ДОВГОБУДІВ ✦ ВІД $120 ✦ ПЕРШИЙ КЕЙС JMC-TRADE.COM ✦ БЕЗ БЮРОКРАТІЇ ✦ 100% МОБІЛЬНА АДАПТАЦІЯ ✦ ЗАПУСК ЗА 1 ТИЖДЕНЬ ✦</span>
+      <span>⚡ САЙТИ ЗА 7 ДНІВ ✦ ЖОДНИХ ДОВГОБУДІВ ✦ ВІД $120 ✦ ПЕРШИЙ КЕЙС JMC-TRADE.COM ✦ БЕЗ БЮРОКРАТІЇ ✦ 100% МОБІЛЬНА АДАПТАЦІЯ ✦ ЗАПУСК ЗА 1 ТИЖДЕНЬ ✦</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <span class="logo-mark">⚡</span>
+        <span class="logo-text">your<span class="logo-dot">.</span>site</span>
+      </a>
+
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="#manifesto">Без довгобудів</a></li>
+          <li><a href="#cases">Портфоліо</a></li>
+          <li><a href="#pricing">Тарифи</a></li>
+          <li><a href="#contact" class="nav-contact-link">Контакти</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a href="#contact" class="btn btn-primary header-btn">Замовити сайт</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <!-- Decorative theme badges / stickers -->
+      <div class="deco-element deco-sticker-1" aria-hidden="true">
+        <span>⏱ 7 ДНІВ І ГОТОВО!</span>
+      </div>
+      <div class="deco-element deco-sticker-2" aria-hidden="true">
+        <span>🔥 0% ДОВГОБУДІВ</span>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-icon">🚀</span>
+            <span class="badge-text">Експрес-розробка сайтів за 1 тиждень</span>
+          </div>
+          
+          <h1 class="hero-title">
+            Клепаємо сайти за 7 днів. <span class="highlight">Без довгобудів</span> та зайвих нервів.
+          </h1>
+
+          <p class="hero-description">
+            Вам потрібен сайт, який починає приносити замовлення наступного тижня, а не контракт на пів року з нескінченними зідзвонами. Робимо швидкі, соковиті та робочі лендінги під ключ.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary btn-large">
+              <span>🚀 Замовити сайт на цей тиждень</span>
+            </a>
+            <a href="#cases" class="btn btn-secondary btn-large">
+              <span>Дивитися кейс jmc-trade.com</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">7 ДНІВ</span>
+              <span class="stat-label">максимальний строк релізу</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">$120–$250</span>
+              <span class="stat-label">доступна чесна ціна</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">0 ДНІВ</span>
+              <span class="stat-label">нудної бюрократії</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Hero Visual -->
+        <div class="hero-visual">
+          <div class="visual-card-wrap">
+            <div class="visual-card">
+              <div class="card-topbar">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="topbar-domain">your.site / fast-launch-2026</span>
+              </div>
+              <div class="card-inner-content">
+                <div class="visual-tag">Динамічна демонстрація</div>
+                <h3 class="visual-heading">Один код — 8 кардинально різних світів</h3>
+                <p>Клацайте кнопку нижче! Ми не просто міняємо колір: змінюється вся геометрія кнопок, тіні, атмосфера, шрифти та фон.</p>
+                <div class="interactive-switch-box">
+                  <button class="btn btn-primary btn-sm" id="heroTryStyleBtn">
+                    🎲 Клікни: трансформуй стиль!
+                  </button>
+                  <span class="switch-hint">Спробуйте всі 8 стилів прямо тут</span>
+                </div>
+                <div class="card-features-mini">
+                  <span class="mini-tag">⚡ Мобільна версія</span>
+                  <span class="mini-tag">✉️ Форма на sanshshevchuk@gmail.com</span>
+                  <span class="mini-tag">🔒 SSL + Домен</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANTI-LONGRUN MANIFESTO -->
+    <section class="section manifesto-section" id="manifesto">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="section-subtitle">ПРИНЦИП РОБОТИ</span>
+          <h2 class="section-title">Чому ми категорично проти довгобудів</h2>
+          <p class="section-desc">
+            Класичні агентства розтягують прості речі на місяці, щоб виправдати цінник у тисячі доларів. Ось як це працює у нас:
+          </p>
+        </div>
+
+        <div class="comparison-grid">
+          <div class="comparison-card bad-way">
+            <div class="comp-header">
+              <span class="comp-icon">❌</span>
+              <h3>Типові агенції (Довгобуди)</h3>
+            </div>
+            <ul class="comp-list">
+              <li>⏱ <strong>Терміни:</strong> 1–3 місяці очікування і "ми ще погоджуємо бриф"</li>
+              <li>💸 <strong>Ціна:</strong> Від $1000+, бо ви оплачуєте каву 5 менеджерам</li>
+              <li>📑 <strong>Процес:</strong> 20 непотрібних зідзвонів у Zoom замість розробки</li>
+              <li>😴 <strong>Результат:</strong> За цей час ви вже могли тестувати рекламу і заробляти</li>
+            </ul>
+          </div>
+
+          <div class="comparison-card good-way">
+            <div class="comp-header">
+              <span class="comp-icon">⚡</span>
+              <h3>Підхід your.site (Швидкий запуск)</h3>
+            </div>
+            <ul class="comp-list">
+              <li>⏱ <strong>Терміни:</strong> Рівно 7 днів (а для візитки — 3 дні!)</li>
+              <li>💸 <strong>Ціна:</strong> Від $120 до $250. Без прихованих переплат</li>
+              <li>💬 <strong>Процес:</strong> Чітке узгодження в Telegram/пошті напряму з розробником</li>
+              <li>🚀 <strong>Результат:</strong> Робочий сайт в мережі наступного тижня</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cases / Portfolio Section -->
+    <section class="section cases-section" id="cases">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="section-subtitle">РЕАЛЬНИЙ ДОСВІД</span>
+          <h2 class="section-title">Перший запущений кейс</h2>
+          <p class="section-desc">
+            Ми не теоретики. Ось готовий комерційний сайт, створений під ключ:
+          </p>
+        </div>
+
+        <div class="cases-grid">
+          <!-- Main Case: jmc-trade.com -->
+          <article class="case-card featured-case">
+            <div class="case-media">
+              <div class="case-browser-mockup">
+                <div class="mockup-header">
+                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                  <span class="mockup-url">https://jmc-trade.com</span>
+                </div>
+                <div class="mockup-body jmc-preview">
+                  <div class="preview-overlay">
+                    <span class="preview-badge">Запущений комерційний проєкт</span>
+                    <h3>JMC-TRADE.COM</h3>
+                    <p>Міжнародна торговельна платформа та комерційні пропозиції</p>
+                    <a href="https://jmc-trade.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                      Відкрити сайт ↗
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="case-info">
+              <div class="case-meta">
+                <span class="case-tag">Готовий сайт</span>
+                <span class="case-tag">B2B Торгівля</span>
+                <span class="case-tag">Без затримок</span>
+              </div>
+              <h3 class="case-name">
+                <a href="https://jmc-trade.com" target="_blank" rel="noopener noreferrer">
+                  JMC Trade (jmc-trade.com)
+                </a>
+              </h3>
+              <p class="case-description">
+                Презентаційний веб-сайт компанії: чітке позиціонування, швидке завантаження, оптимізація під мобільні екрани та надійне розміщення на домені.
+              </p>
+              <ul class="case-highlights">
+                <li>✓ Зручний перегляд на смартфонах</li>
+                <li>✓ Оптимізована швидкість сторінки</li>
+                <li>✓ Підключений безпечний сертифікат SSL</li>
+              </ul>
+              <div class="case-link-wrap">
+                <a href="https://jmc-trade.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  Переглянути наживо jmc-trade.com ↗
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing / Only Fast Formats (No Corporate multi-month drags) -->
+    <section class="section pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="section-subtitle">ТІЛЬКИ ШВИДКІ ФОРМАТИ</span>
+          <h2 class="section-title">Жодних складних довгобудів — тільки те, що запускається за 7 днів</h2>
+          <p class="section-desc">
+            Оберіть формат під ваші задачі. Фіксована ціна, фіксований термін.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Plan 1: Express Card -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <span class="plan-badge">Швидкий старт</span>
+              <h3 class="plan-name">Сайт-Візитка</h3>
+              <div class="plan-price">
+                <span class="currency">$</span><span class="amount">120</span>
+              </div>
+              <p class="plan-timeline">⏱ Термін: 3–4 дні</p>
+            </div>
+            <div class="plan-body">
+              <p class="plan-desc">Для майстра, фахівця, лікаря, юриста чи локальної послуги, яким потрібна присутність в інтернеті.</p>
+              <ul class="plan-list">
+                <li>✓ 1–2 лаконічні блоки (про вас + послуги)</li>
+                <li>✓ Кнопки швидкого дзвінка, Telegram, Viber</li>
+                <li>✓ 100% адаптивність під телефони</li>
+                <li>✓ Підключення вашого домену</li>
+              </ul>
+            </div>
+            <div class="pricing-footer">
+              <a href="#contact" class="btn btn-secondary btn-block">Замовити візитку</a>
+            </div>
+          </div>
+
+          <!-- Plan 2: Fast Landing (Hit) -->
+          <div class="pricing-card popular-card">
+            <div class="popular-ribbon">ХІТ ПРОДАЖІВ 🔥</div>
+            <div class="pricing-header">
+              <span class="plan-badge">Для продажу та реклами</span>
+              <h3 class="plan-name">Лендінг за 7 днів</h3>
+              <div class="plan-price">
+                <span class="currency">$</span><span class="amount">220</span>
+              </div>
+              <p class="plan-timeline">⏱ Термін: рівно 1 тиждень</p>
+            </div>
+            <div class="plan-body">
+              <p class="plan-desc">Потужна односторінкова воронка для запуску реклами, продажу конкретної послуги чи продукту.</p>
+              <ul class="plan-list">
+                <li>✓ Повна маркетингова структура (5–7 блоків)</li>
+                <li>✓ Соковитий перший екран та вигоди</li>
+                <li>✓ Форми прийому заявок на Email або Telegram</li>
+                <li>✓ Мобільна оптимізація та швидкість завантаження</li>
+                <li>✓ Базова SEO-підготовка</li>
+              </ul>
+            </div>
+            <div class="pricing-footer">
+              <a href="#contact" class="btn btn-primary btn-block">Замовити лендінг за 7 днів</a>
+            </div>
+          </div>
+
+          <!-- Plan 3: Fast Showcase / Menu -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <span class="plan-badge">Вітрина без ускладнень</span>
+              <h3 class="plan-name">Сайт-Каталог</h3>
+              <div class="plan-price">
+                <span class="currency">$</span><span class="amount">290</span>
+              </div>
+              <p class="plan-timeline">⏱ Термін: 7 днів</p>
+            </div>
+            <div class="plan-body">
+              <p class="plan-desc">Зручна вітрина товарів, авто, нерухомості чи ресторанне меню без громіздких панелей і переплат.</p>
+              <ul class="plan-list">
+                <li>✓ Презентація товарів чи послуг з фото і цінами</li>
+                <li>✓ Зручний перегляд списком або плиткою</li>
+                <li>✓ Кнопки "Замовити в 1 клік" у месенджери</li>
+                <li>✓ Запуск за 7 днів без головного болю</li>
+              </ul>
+            </div>
+            <div class="pricing-footer">
+              <a href="#contact" class="btn btn-secondary btn-block">Замовити каталог</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container contact-container">
+        <div class="contact-card">
+          <div class="contact-info-side">
+            <span class="section-subtitle">ЗВ'ЯЗОК НАПРЯМУ</span>
+            <h2 class="contact-headline">Запустимо ваш сайт вже на цьому тижні</h2>
+            <p class="contact-subtext">
+              Напишіть на пошту або заповніть форму. Відповідаю швидко, без зайвої тяганини.
+            </p>
+
+            <div class="contact-methods">
+              <a href="mailto:sanshshevchuk@gmail.com" class="contact-method-item">
+                <div class="method-icon">✉️</div>
+                <div class="method-details">
+                  <span class="method-label">Прямий Email:</span>
+                  <strong class="method-value">sanshshevchuk@gmail.com</strong>
+                </div>
+              </a>
+
+              <div class="contact-method-item">
+                <div class="method-icon">⚡</div>
+                <div class="method-details">
+                  <span class="method-label">Швидкість:</span>
+                  <strong class="method-value">Готовий результат за 7 днів</strong>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon">🌐</div>
+                <div class="method-details">
+                  <span class="method-label">Перевірений кейс:</span>
+                  <a href="https://jmc-trade.com" target="_blank" rel="noopener noreferrer" class="method-link">jmc-trade.com ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="trust-note">
+              🛡 <strong>Безпечний формат:</strong> узгоджуємо план -> показую робочу версію -> запускаємо на домені.
+            </div>
+          </div>
+
+          <div class="contact-form-side">
+            <form id="orderForm" class="site-form">
+              <h3 class="form-title">Залишити заявку на розробку</h3>
+              
+              <div class="form-group">
+                <label for="clientName">Ваше ім'я:</label>
+                <input type="text" id="clientName" required placeholder="Олександр, Ірина...">
+              </div>
+
+              <div class="form-group">
+                <label for="clientContact">Ваш контакт (Email, Telegram або Телефон):</label>
+                <input type="text" id="clientContact" required placeholder="@telegram, пошта або телефон">
+              </div>
+
+              <div class="form-group">
+                <label for="siteType">Що саме потрібно зробити?</label>
+                <select id="siteType">
+                  <option value="landing">Лендінг за 7 днів ($220)</option>
+                  <option value="card">Швидка сайт-візитка за 3-4 дні ($120)</option>
+                  <option value="showcase">Сайт-вітрина / каталог за 7 днів ($290)</option>
+                  <option value="consult">Потрібна консультація щодо ідеї</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="clientMessage">Коротко про нішу або задачу:</label>
+                <textarea id="clientMessage" rows="3" placeholder="Наприклад: автопідбір, ремонт, магазин одягу, косметолог..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <span>✉️ Надіслати заявку на sanshshevchuk@gmail.com</span>
+              </button>
+
+              <div id="formStatus" class="form-status" style="display: none;"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#" class="brand-logo">
+          <span class="logo-mark">⚡</span>
+          <span class="logo-text">your<span class="logo-dot">.</span>site</span>
+        </a>
+        <p class="footer-tagline">Швидкі сайти за 7 днів. Жодних довгобудів.</p>
+      </div>
+
+      <div class="footer-links">
+        <span>Email: <a href="mailto:sanshshevchuk@gmail.com">sanshshevchuk@gmail.com</a></span>
+        <span>Кейс: <a href="https://jmc-trade.com" target="_blank" rel="noopener noreferrer">jmc-trade.com</a></span>
+      </div>
+
+      <div class="footer-copy">
+        &copy; <span id="currentYear">2026</span> your.site. Працюємо швидко та надійно.
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
