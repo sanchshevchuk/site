@@ -8,7 +8,7 @@
   
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%2232%22%20height=%2232%22><text y=%2224%22 font-size=%2224%22>⚡</text></svg>">
 
-  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -31,11 +31,11 @@
       justify-content: center;
       padding: 40px 20px;
       position: relative;
+      background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1920&q=80');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      transition: background-image 0.4s ease-in-out;
     }
 
     /* Ambient soft vignette */
@@ -43,51 +43,9 @@
       content: '';
       position: fixed;
       inset: 0;
-      background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.4) 0%, rgba(15, 23, 42, 0.35) 100%);
+      background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.45) 0%, rgba(15, 23, 42, 0.35) 100%);
       pointer-events: none;
       z-index: 1;
-    }
-
-    /* Interactive photo mood switcher */
-    .photo-switcher {
-      position: fixed;
-      top: 18px;
-      right: 20px;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #475569;
-    }
-
-    .photo-btn {
-      background: transparent;
-      border: 1px solid transparent;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #334155;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .photo-btn:hover {
-      background: #f1f5f9;
-    }
-
-    .photo-btn.active {
-      background: #0f172a;
-      color: #ffffff;
     }
 
     /* Main Container Card */
@@ -160,7 +118,7 @@
       margin-bottom: 32px;
     }
 
-    /* What I Build - Modern Clean Rows */
+    /* Interactive Clean Rows linking to examples */
     .formats-list {
       display: flex;
       flex-direction: column;
@@ -176,12 +134,16 @@
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 14px;
-      transition: transform 0.15s ease, border-color 0.15s ease;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
 
     .format-item:hover {
-      transform: translateX(3px);
-      border-color: #cbd5e1;
+      transform: translateX(4px);
+      border-color: #0284c7;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.1);
     }
 
     .format-dot {
@@ -202,6 +164,19 @@
       font-size: 0.86rem;
       color: #64748b;
       margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .format-arrow {
+      color: #0284c7;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+    }
+
+    .format-item:hover .format-arrow {
+      transform: translateX(3px);
     }
 
     /* Contact Action Area */
@@ -268,32 +243,20 @@
         padding: 34px 22px;
         border-radius: 20px;
       }
-      .format-desc {
+      .format-desc span {
         display: none;
-      }
-      .photo-switcher {
-        top: 10px;
-        right: 10px;
       }
     }
   </style>
 </head>
-<body id="bgBody">
-
-  <!-- Instant background photo switcher for the user -->
-  <div class="photo-switcher">
-    <span>Фон:</span>
-    <button class="photo-btn active" onclick="setPhoto(0)">1. Лофт</button>
-    <button class="photo-btn" onclick="setPhoto(1)">2. Архітектура</button>
-    <button class="photo-btn" onclick="setPhoto(2)">3. Студія</button>
-  </div>
+<body>
 
   <div class="card-wrap">
     <main class="glass-card">
       
       <!-- Top Bar -->
       <div class="brand-bar">
-        <a href="#" class="brand-title">site<span>.</span>shevchuk.vn.ua</a>
+        <a href="index.html" class="brand-title">site<span>.</span>shevchuk.vn.ua</a>
         <span class="brand-sub">Веб-розробка</span>
       </div>
 
@@ -304,25 +267,34 @@
         Розробляю швидкі та зручні сайти без посередників, зайвих зідзвонів та розтягнутих дедлайнів. Від вашої ідеї до готового сайту в мережі — рівно 1 тиждень.
       </p>
 
-      <!-- Formats -->
+      <!-- Formats with links to examples -->
       <div class="formats-list">
-        <div class="format-item">
+        <a href="examples.html#landings" class="format-item">
           <div class="format-dot"></div>
           <span class="format-name">Лендінги під рекламу</span>
-          <span class="format-desc">продаж послуги або товару</span>
-        </div>
+          <div class="format-desc">
+            <span>продаж послуги / товару</span>
+            <span class="format-arrow">→</span>
+          </div>
+        </a>
 
-        <div class="format-item">
+        <a href="examples.html#business-card" class="format-item">
           <div class="format-dot"></div>
           <span class="format-name">Сайти-візитки</span>
-          <span class="format-desc">для експертів і майстрів</span>
-        </div>
+          <div class="format-desc">
+            <span>для експертів і майстрів</span>
+            <span class="format-arrow">→</span>
+          </div>
+        </a>
 
-        <div class="format-item">
+        <a href="examples.html#catalogs" class="format-item">
           <div class="format-dot"></div>
           <span class="format-name">Каталоги та вітрини</span>
-          <span class="format-desc">без складних адмінок</span>
-        </div>
+          <div class="format-desc">
+            <span>без складних адмінок</span>
+            <span class="format-arrow">→</span>
+          </div>
+        </a>
       </div>
 
       <!-- Contact -->
@@ -342,29 +314,5 @@
     </div>
   </div>
 
-  <script>
-    // 3 Curated aesthetic background photos
-    const photos = [
-      // 1. Warm Architectural Minimal Loft
-      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1920&q=80",
-      // 2. Crisp Clean Architectural Glass & Light
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80",
-      // 3. Modern Creative Workspace & Warm Light
-      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1920&q=80"
-    ];
-
-    function setPhoto(idx) {
-      document.body.style.backgroundImage = `url('${photos[idx]}')`;
-      const buttons = document.querySelectorAll('.photo-btn');
-      buttons.forEach((btn, i) => {
-        btn.classList.toggle('active', i === idx);
-      });
-      localStorage.setItem('chosenPhotoIdx', idx);
-    }
-
-    // Initialize with first photo or saved
-    const saved = localStorage.getItem('chosenPhotoIdx');
-    setPhoto(saved !== null ? parseInt(saved, 10) : 0);
-  </script>
 </body>
 </html>
