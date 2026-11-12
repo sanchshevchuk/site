@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>site.shevchuk.vn.ua — Розробка сайтів за 7 днів</title>
   <meta name="description" content="Швидка розробка сайтів під ключ за 1 тиждень. Лендінги, візитки, каталоги.">
   
@@ -20,22 +20,26 @@
       padding: 0;
     }
 
+    html, body {
+      height: 100%;
+      height: 100dvh;
+    }
+
     body {
-      min-height: 100vh;
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color: #0f172a;
-      line-height: 1.6;
+      line-height: 1.5;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 40px 20px;
+      padding: 16px 14px;
       position: relative;
       background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1920&q=80');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
+      overflow-x: hidden;
     }
 
     /* Ambient soft vignette */
@@ -52,20 +56,26 @@
     .card-wrap {
       position: relative;
       z-index: 10;
-      max-width: 580px;
+      max-width: 520px;
       width: 100%;
+      max-height: calc(100dvh - 32px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .glass-card {
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.93);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      border-radius: 28px;
-      padding: 48px 40px;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      border-radius: 24px;
+      padding: 24px 22px 20px;
       box-shadow: 
-        0 25px 50px -12px rgba(15, 23, 42, 0.15),
+        0 20px 40px -12px rgba(15, 23, 42, 0.15),
         0 1px 2px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
     }
 
     /* Brand Header */
@@ -73,15 +83,17 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 28px;
+      gap: 8px;
+      margin-bottom: 12px;
     }
 
     .brand-title {
-      font-size: 1.35rem;
+      font-size: 1.1rem;
       font-weight: 800;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.3px;
       color: #0f172a;
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .brand-title span {
@@ -89,21 +101,23 @@
     }
 
     .brand-sub {
-      font-size: 0.8rem;
+      font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1.2px;
+      letter-spacing: 1px;
       color: #64748b;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     /* Main Hero Headline */
     h1 {
-      font-size: clamp(2.2rem, 5.5vw, 3rem);
+      font-size: clamp(1.6rem, 5.2vw, 2.2rem);
       font-weight: 800;
       color: #0f172a;
       line-height: 1.15;
-      letter-spacing: -1px;
-      margin-bottom: 16px;
+      letter-spacing: -0.8px;
+      margin-bottom: 10px;
     }
 
     .accent-word {
@@ -112,68 +126,64 @@
     }
 
     .intro-text {
-      font-size: 1.1rem;
+      font-size: clamp(0.85rem, 2.8vw, 0.95rem);
       color: #475569;
-      line-height: 1.6;
-      margin-bottom: 32px;
+      line-height: 1.45;
+      margin-bottom: 14px;
     }
 
-    /* Interactive Clean Rows linking to examples */
+    /* Formats list */
     .formats-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 32px;
+      gap: 7px;
+      margin-bottom: 14px;
     }
 
     .format-item {
       display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 14px 18px;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 9px 12px;
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      color: inherit;
+      border-radius: 11px;
+    }
+
+    .format-left {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-width: 0;
     }
 
     .format-dot {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: #0284c7;
       flex-shrink: 0;
     }
 
     .format-name {
-      font-size: 0.98rem;
+      font-size: 0.88rem;
       font-weight: 700;
       color: #0f172a;
+      white-space: nowrap;
     }
 
     .format-desc {
-      font-size: 0.86rem;
+      font-size: 0.78rem;
       color: #64748b;
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .format-arrow {
-      color: #0284c7;
-      font-weight: 700;
-      transition: transform 0.2s ease;
-    }
-
-    .format-item:hover .format-arrow {
-      transform: translateX(3px);
+      text-align: right;
+      white-space: nowrap;
     }
 
     /* Contact Action Area */
     .contact-box {
       border-top: 1px solid #e2e8f0;
-      padding-top: 28px;
+      padding-top: 12px;
       text-align: center;
     }
 
@@ -181,29 +191,27 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       width: 100%;
       background: #0f172a;
       color: #ffffff;
       font-family: inherit;
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       font-weight: 700;
-      padding: 16px 28px;
-      border-radius: 14px;
+      padding: 12px 18px;
+      border-radius: 12px;
       text-decoration: none;
       transition: all 0.2s ease;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
     }
 
     .btn-main:hover {
       background: #0284c7;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
     }
 
     .email-label {
-      margin-top: 14px;
-      font-size: 0.9rem;
+      margin-top: 7px;
+      font-size: 0.8rem;
       color: #64748b;
     }
 
@@ -214,29 +222,31 @@
       border-bottom: 1px dotted #94a3b8;
     }
 
-    .email-label a:hover {
-      color: #0284c7;
-      border-bottom-color: #0284c7;
-    }
-
     /* Minimal Footnote */
     .footnote {
-      margin-top: 24px;
+      margin-top: 8px;
       text-align: center;
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       color: rgba(15, 23, 42, 0.65);
-      position: relative;
-      z-index: 10;
     }
 
-    @media (max-width: 480px) {
-      .glass-card {
-        padding: 34px 22px;
-        border-radius: 20px;
-      }
-      .format-desc span {
-        display: none;
-      }
+    /* Extreme small screen tuning (small iPhones/Androids) */
+    @media (max-height: 650px) {
+      body { padding: 8px; }
+      .glass-card { padding: 14px 14px 12px; border-radius: 18px; }
+      h1 { font-size: 1.45rem; margin-bottom: 6px; }
+      .intro-text { font-size: 0.8rem; line-height: 1.35; margin-bottom: 10px; }
+      .formats-list { gap: 5px; margin-bottom: 10px; }
+      .format-item { padding: 7px 10px; }
+      .contact-box { padding-top: 8px; }
+      .btn-main { padding: 10px 14px; font-size: 0.88rem; }
+      .email-label { margin-top: 5px; font-size: 0.75rem; }
+      .footnote { margin-top: 4px; }
+    }
+
+    @media (max-width: 360px) {
+      .format-desc { display: none; }
+      .brand-title { font-size: 0.95rem; }
     }
   </style>
 </head>
@@ -255,27 +265,33 @@
       <h1>Сайти під ключ за <span class="accent-word">7 днів</span>.</h1>
       
       <p class="intro-text">
-        Розробляю швидкі та зручні сайти без посередників, зайвих зідзвонів та розтягнутих дедлайнів. Від вашої ідеї до готового сайту в мережі — рівно 1 тиждень.
+        Швидкі та зручні сайти без посередників, зайвих зідзвонів та затягнутих дедлайнів. Від вашої ідеї до готового сайту в мережі — рівно 1 тиждень.
       </p>
 
       <!-- Formats -->
       <div class="formats-list">
         <div class="format-item">
-          <div class="format-dot"></div>
-          <span class="format-name">Лендінги під рекламу</span>
-          <span class="format-desc">продаж послуги або товару</span>
+          <div class="format-left">
+            <div class="format-dot"></div>
+            <span class="format-name">Лендінги під рекламу</span>
+          </div>
+          <span class="format-desc">послуга / товар</span>
         </div>
 
         <div class="format-item">
-          <div class="format-dot"></div>
-          <span class="format-name">Сайти-візитки</span>
-          <span class="format-desc">для експертів і майстрів</span>
+          <div class="format-left">
+            <div class="format-dot"></div>
+            <span class="format-name">Сайти-візитки</span>
+          </div>
+          <span class="format-desc">для експертів</span>
         </div>
 
         <div class="format-item">
-          <div class="format-dot"></div>
-          <span class="format-name">Каталоги та вітрини</span>
-          <span class="format-desc">без складних адмінок</span>
+          <div class="format-left">
+            <div class="format-dot"></div>
+            <span class="format-name">Каталоги та вітрини</span>
+          </div>
+          <span class="format-desc">без адмінок</span>
         </div>
       </div>
 
