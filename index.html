@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Розробка сайтів за 7 днів під ключ — site.shevchuk.vn.ua</title>
   <meta name="description" content="Швидка розробка сайтів під ключ: конверсійні лендінги для реклами, персональні сайти-візитки для експертів, легкі та швидкі каталоги й вітрини товарів.">
-  <meta name="keywords" content="розробка сайтів, замовити сайт, лендінг під ключ, сайт-візитка, створення сайтів Вінниця, веб-розробник Україна, сайти за 7 днів">
   <meta name="author" content="Олександр Шевчук">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://site.shevchuk.vn.ua/">
@@ -41,7 +40,21 @@
       "name": "Олександр Шевчук"
     },
     "email": "oleksandr@shevchuk.vn.ua",
-    "areaServed": "UA"
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Вінниця",
+      "addressCountry": "UA"
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Вінниця"
+      },
+      {
+        "@type": "Country",
+        "name": "Україна"
+      }
+    ]
   }
   </script>
 
@@ -49,8 +62,6 @@
   <link rel="alternate icon" href="favicon.svg">
   <link rel="preload" href="./fonts/raleway-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./fonts/raleway-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="./bg-desktop.webp" type="image/webp" media="(min-width: 601px)" fetchpriority="high">
-  <link rel="preload" as="image" href="./bg-mobile.webp" type="image/webp" media="(max-width: 600px)" fetchpriority="high">
   <style>
     @font-face {
       font-family: 'Raleway';
@@ -69,7 +80,10 @@
       unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; height: 100dvh; }
+    html, body {
+      min-height: 100%;
+      min-height: 100dvh;
+    }
     body {
       font-family: 'Raleway', sans-serif;
       color: #0f172a;
@@ -77,10 +91,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       padding: 16px 14px;
       position: relative;
-      background: #0f172a url('./bg-desktop.webp') center/cover no-repeat;
+      background-color: #0b1120;
+      background-image: 
+        radial-gradient(circle at 85% 15%, rgba(2, 132, 199, 0.25) 0%, transparent 55%),
+        radial-gradient(circle at 15% 85%, rgba(132, 204, 22, 0.18) 0%, transparent 50%);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       overflow-x: hidden;
       -webkit-tap-highlight-color: transparent;
     }
@@ -88,7 +106,7 @@
       content: '';
       position: fixed;
       inset: 0;
-      background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.45) 0%, rgba(15, 23, 42, 0.35) 100%);
+      background: radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.08) 0%, transparent 70%);
       pointer-events: none;
       z-index: 1;
     }
@@ -97,10 +115,9 @@
       z-index: 10;
       max-width: 520px;
       width: 100%;
-      max-height: calc(100dvh - 32px);
+      margin: auto 0;
       display: flex;
       flex-direction: column;
-      justify-content: center;
     }
     .glass-card {
       background: rgba(255, 255, 255, 0.94);
@@ -190,6 +207,17 @@
       position: relative;
       cursor: pointer;
       user-select: none;
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: inherit;
+      color: inherit;
+      -webkit-appearance: none;
+    }
+    .process-step:focus-visible {
+      outline: 2px solid #0284c7;
+      outline-offset: 4px;
+      border-radius: 50%;
     }
     .step-icon-ring {
       width: 44px;
@@ -238,7 +266,7 @@
       top: 48px;
       font-size: 0.74rem;
       font-weight: 800;
-      color: #0284c7;
+      color: #0369a1;
       white-space: nowrap;
       opacity: 0;
       transform: translateY(-4px);
@@ -246,6 +274,7 @@
       pointer-events: none;
     }
     .process-step:hover .step-icon-ring,
+    .process-step:focus-visible .step-icon-ring,
     .process-step.is-active .step-icon-ring {
       border-color: #0284c7;
       color: #0284c7;
@@ -254,6 +283,7 @@
       box-shadow: 0 8px 18px rgba(2, 132, 199, 0.22);
     }
     .process-step:hover .step-label,
+    .process-step:focus-visible .step-label,
     .process-step.is-active .step-label {
       opacity: 1;
       transform: translateY(0);
@@ -285,7 +315,7 @@
       text-align: center;
       font-size: 0.72rem;
       font-weight: 600;
-      color: #94a3b8;
+      color: #475569;
       border-top: 1px solid #f1f5f9;
       padding-top: 6px;
     }
@@ -303,9 +333,6 @@
       .contact-box { margin-top: 8px; }
       .btn-main { padding: 9px 12px; font-size: 0.85rem; }
       .footnote { margin-top: 4px; font-size: 0.68rem; }
-    }
-    @media (max-width: 600px) {
-      body { background-image: url('./bg-mobile.webp'); }
     }
     @media (max-width: 380px) {
       .step-icon-ring { width: 38px; height: 38px; }
@@ -350,40 +377,40 @@
         </div>
       </div>
 
-      <div class="clean-process">
-        <div class="process-step" onclick="activateStep(this)">
-          <div class="step-icon-ring">
+      <div class="clean-process" role="region" aria-label="Етапи роботи">
+        <button type="button" class="process-step" onclick="activateStep(this)" aria-label="Етап 1: Ідея">
+          <div class="step-icon-ring" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.5 3 6h8c1.5-1.5 3-3.5 3-6a7 7 0 0 0-7-7z"/></svg>
           </div>
           <span class="step-label">1. Ідея</span>
-        </div>
-        <div class="arrow-divider">
+        </button>
+        <div class="arrow-divider" aria-hidden="true">
           <svg class="arrow-svg" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
         </div>
-        <div class="process-step" onclick="activateStep(this)">
-          <div class="step-icon-ring">
+        <button type="button" class="process-step" onclick="activateStep(this)" aria-label="Етап 2: ТЗ">
+          <div class="step-icon-ring" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 14l2 2 4-4"/></svg>
           </div>
           <span class="step-label">2. ТЗ</span>
-        </div>
-        <div class="arrow-divider">
+        </button>
+        <div class="arrow-divider" aria-hidden="true">
           <svg class="arrow-svg" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
         </div>
-        <div class="process-step" onclick="activateStep(this)">
-          <div class="step-icon-ring">
+        <button type="button" class="process-step" onclick="activateStep(this)" aria-label="Етап 3: Код">
+          <div class="step-icon-ring" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M8 7L3 12L8 17"/><path d="M16 7L21 12L16 17"/><line x1="13" y1="5" x2="11" y2="19"/></svg>
           </div>
           <span class="step-label">3. Код</span>
-        </div>
-        <div class="arrow-divider">
+        </button>
+        <div class="arrow-divider" aria-hidden="true">
           <svg class="arrow-svg" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
         </div>
-        <div class="process-step" onclick="activateStep(this)">
-          <div class="step-icon-ring">
+        <button type="button" class="process-step" onclick="activateStep(this)" aria-label="Етап 4: Запуск">
+          <div class="step-icon-ring" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
           </div>
           <span class="step-label">4. Запуск</span>
-        </div>
+        </button>
       </div>
 
       <div class="contact-box">

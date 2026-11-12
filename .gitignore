@@ -1,0 +1,11 @@
+# Antigravity rules and knowledge base (contains private email & routing)
+GEMINI.md
+.agents/
+.agent/
+
+# Scratch & build files
+*.html.bak
+og-render.html
+build_og.py
+preview-process.html
+examples.html
