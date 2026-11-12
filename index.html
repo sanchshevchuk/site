@@ -93,11 +93,11 @@
       align-items: center;
       padding: 16px 14px;
       position: relative;
-      background-color: #0b1120;
-      background-image: 
-        radial-gradient(circle at 85% 15%, rgba(2, 132, 199, 0.25) 0%, transparent 55%),
-        radial-gradient(circle at 15% 85%, rgba(132, 204, 22, 0.18) 0%, transparent 50%);
-      background-repeat: no-repeat;
+      background-color: #0f172a;
+      background-image:
+        linear-gradient(125deg, transparent 46%, rgba(132, 204, 22, 0.3) 46.5%, rgba(132, 204, 22, 0.3) 47.5%, transparent 48%),
+        linear-gradient(125deg, transparent 48.5%, rgba(255, 255, 255, 0.22) 49%, rgba(255, 255, 255, 0.22) 50%, transparent 50.5%),
+        radial-gradient(circle at 80% 20%, rgba(132, 204, 22, 0.18) 0%, transparent 50%);
       background-attachment: fixed;
       overflow-x: hidden;
       -webkit-tap-highlight-color: transparent;
@@ -106,7 +106,7 @@
       content: '';
       position: fixed;
       inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.08) 0%, transparent 70%);
+      background: radial-gradient(circle at 15% 85%, rgba(132, 204, 22, 0.1) 0%, transparent 60%);
       pointer-events: none;
       z-index: 1;
     }
@@ -145,7 +145,7 @@
       text-decoration: none;
       white-space: nowrap;
     }
-    .brand-title span { color: #0284c7; }
+    .brand-title span { color: #84cc16; }
     .brand-sub {
       font-size: 0.72rem;
       font-weight: 800;
@@ -188,7 +188,7 @@
       border-radius: 11px;
     }
     .format-left { display: flex; align-items: center; gap: 8px; min-width: 0; }
-    .format-dot { width: 8px; height: 8px; border-radius: 50%; background: #0284c7; flex-shrink: 0; }
+    .format-dot { width: 8px; height: 8px; border-radius: 50%; background: #84cc16; flex-shrink: 0; }
     .format-name { font-size: 0.88rem; font-weight: 700; color: #0f172a; white-space: nowrap; }
     .format-desc { font-size: 0.78rem; font-weight: 600; color: #64748b; text-align: right; white-space: nowrap; }
     .clean-process {
@@ -215,7 +215,7 @@
       -webkit-appearance: none;
     }
     .process-step:focus-visible {
-      outline: 2px solid #0284c7;
+      outline: 2px solid #84cc16;
       outline-offset: 4px;
       border-radius: 50%;
     }
@@ -266,7 +266,7 @@
       top: 48px;
       font-size: 0.74rem;
       font-weight: 800;
-      color: #0369a1;
+      color: #4d7c0f;
       white-space: nowrap;
       opacity: 0;
       transform: translateY(-4px);
@@ -276,11 +276,11 @@
     .process-step:hover .step-icon-ring,
     .process-step:focus-visible .step-icon-ring,
     .process-step.is-active .step-icon-ring {
-      border-color: #0284c7;
-      color: #0284c7;
-      background: #f0f9ff;
+      border-color: #84cc16;
+      color: #4d7c0f;
+      background: #f7fee7;
       transform: translateY(-2px) scale(1.05);
-      box-shadow: 0 8px 18px rgba(2, 132, 199, 0.22);
+      box-shadow: 0 8px 18px rgba(132, 204, 22, 0.28);
     }
     .process-step:hover .step-label,
     .process-step:focus-visible .step-label,
